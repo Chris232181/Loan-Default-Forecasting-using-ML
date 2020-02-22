@@ -1,5 +1,5 @@
 # Project-3
-Loan default Forecasting
+Loan Default Forecasting
 
 **Christian Stracke**
 
