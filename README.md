@@ -14,8 +14,8 @@ Loan Default Forecasting
 
 
 ## 1. Goal & Motivation
-This Project plans to evaluated two machine learning (ML) models in their accuracy of forecasting defaults and in particular the probability of defaults. 
-The ML models that are being utilized and evaluated are Logistic Regression (LR) and the Gradient Boosting method XGBooster (XGB. The motivation of this project was to set up the a work flow that is part of a larger Loan Analytics Project. 
+This Project plans to evaluated two machine learning (ML) models in their accuracy of forecasting defaults and, in particular, the probability of defaults. 
+The ML models that are being utilized and evaluated are Logistic Regression (LR) and the Gradient Boosting method XGBooster (XGB). The motivation of this project was to set up a work flow that is part of a larger Loan Analytics Project. 
 The Loan Analytics Project has the goal to perform valuations of Loan Portfolios utilizing not only the skills & tools acquired during the Columbia Fintech Coding bootcamp but also to keep expanding the skill set in python coding.
 
 The forecast of probabilities of default (PD) is a crucial component in the valuation of loan portfolios as such that it is an input in the derivation of expected cash flows.
@@ -33,8 +33,8 @@ e) Evaluate models and conclude on the most accurate model
 
 ## 3. Data
 
-We obtained a sample loan tape from a work related project and took out all private date such as names, adresses or any personal information. The loans included in the loan tape are all perfonal loans that were issued for different purposes. The tape contains approximately 30k indiviual loans. The tape contains 13 features with one feature being "loan_status", which is being the binary target variable. "0" means the loan is performing. "1" means the loan is in default.
-The other 12 features contain attorbutes such as, borrower employment length, borrowers income, loan to income ratio etc.
+We obtained a sample loan tape from a work related project and took out all private data such as names, addresses or any personal information. The loan types included in the loan tape are all personal loans that were issued for different purposes. The tape contains approximately 30k individual loans. The tape contains 13 features with one feature being "loan_status", which is the binary target variable. "0" means the loan is performing. "1" means the loan is in default.
+The other 12 features contain attributes such as, borrower employment length, borrower's income, loan-to-income ratio etc.
 
 ## 4. Methods & Technology
 
@@ -46,7 +46,7 @@ We then trained the data and predicted the probaibility of defaults based on the
 ![table](Forecast_PD_XGB_Table.PNG "XGB_PD Forecast")
 
 Based on the initial results, we could already see that the XGB appeared to be more accurate in its predicting ability.
-We went on to further evaluate both model by applying several evaluation & scoring methods in order to determine which ML method (LG or XGB) is the more superior method to use when forecasting PDs.
+We went on to further evaluate both model by applying several evaluation & scoring methods in order to determine which ML method (LG or XGB) is the superior method to use when forecasting PDs.
 
 
 ## 5. Model Evaluation
@@ -64,7 +64,7 @@ c) ROC Curve
 
 ![table](ROCcurve_comparison_Table.PNG "ROC")
 
-Based on all three scorring methods, it became clear that the XGB Boosting model is more accurate in predicting PDs. In particular, measured by F1 score and the AUC (area under the ROC curve) showed significant better results for XGB than LG. In addition, we wanted to understand which of the features are the more crucial ones to predict PD utilizing XGB. We found that the personal income was the most important feature, which from, if you take a step back and think about personal loans, appears to be reasonable, given the income is the key source of income that is used to paypack personal loans. See below for the graph:
+Based on all three scorring methods, it became clear that the XGB Boosting model is more accurate in predicting PDs. In particular, measured by F1 score and the AUC (area under the ROC curve) showed significant better results for XGB than LG. In addition, we wanted to understand which of the features are the more crucial than others to predict PD utilizing XGB. We found that the personal income was the most important feature, which, if you take a step back and think about personal loans, appears to be reasonable, given the income is the key source of income that is used to pay back personal loans. See below for the graph:
 
 ![table](Feature_importance_Table.PNG "ROC")
 
@@ -72,7 +72,7 @@ Based on all three scorring methods, it became clear that the XGB Boosting model
 ## 6. Discussion & Next Steps
 
 
-We cleary identified the XGB model as the better model and therefore tend to use it on subsequent projects to forecast PDs of loans. Next steps for the Loan Analytics Project is to use the predicted PDs in order to calculat the expected loss of a loan (or loan portfolios), which can be calcualted using the PD * EAD (exposure at default) * LGD (loss given default). Once expected losses are calculated, they can be used as inputs when deriving expected cash flows of loans over the life of loans. Expected cash flows will be discounted using an appropriate yield that reflects the risk embedded in the expected cash flows. The present value of the expected cash flows represents the value of the loan (or loan portfolio) that can be used as an indication of what informed buyers and sellers of loan portfolios are willing to pay in a transaction. We already identified a github source (https://github.com/jdvelasq/cashflows), that we plan to test for the roll-out and calculation of expected cash flows of loans.
+We cleary identified the XGB model as the better model and therefore tend to use it on subsequent projects to forecast PDs of loans. Next steps for the Loan Analytics Project is to use the predicted PDs in order to calculate the expected loss of a loan (or loan portfolios), which can be calcualted using the PD * EAD (exposure at default) * LGD (loss given default). Once expected losses are calculated, they can be used as inputs when deriving expected cash flows of loans over the life of loans. Expected cash flows will be discounted using an appropriate yield that reflects the risk embedded in the expected cash flows. The present value of the expected cash flows represents the value of the loan (or loan portfolio) that can be used as an indication of what informed buyers and sellers of loan portfolios are willing to pay in a transaction. We already identified a github source (https://github.com/jdvelasq/cashflows), that we plan to test for the roll-out and calculation of expected cash flows of loans.
 
 To be continued...
 
